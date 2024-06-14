@@ -1,10 +1,11 @@
 from tkinter import *
-import tkinter
+import tkinter 
 from tkinter.messagebox import *
+
 
 cor0 = "#444466"  # Preto / black
 cor1 = "#feffff"  # branco / white
-cor2 = "#004338"
+cor2 = "#004338"  #verde
 
 
 janela = Tk()
@@ -25,9 +26,10 @@ frame_baixo.grid(row= 1, column=0, columnspan=2, pady=15)
 
 
 def escala():
+
     r=s_red.get()
-    g=s_green.get()
-    b=s_blue.get()
+    g=l_green.get()
+    b=l_blue.get()
 
 
     rgb = f'{r}, {g}, {b}'
@@ -62,16 +64,16 @@ s_red=Scale(frame_direita, command= escala, from_=0, to=255, bg=cor1,fh="red", o
 s_red.grid(row= 0, column=1)
 
 
-l_red = Label(frame_direita, text='Green', width=7, bg=cor1, fh='green', anchor='nw', font = ("Time New Roman", 12, "bold"))
-l_red.grid(row= 1, column=0)
-s_red=Scale(frame_direita, command= escala, from_=0, to=255, bg=cor1,fh="green", orient=HORIZONTAL)
-s_red.grid(row= 1, column=1)
+l_green = Label(frame_direita, text='Green', width=7, bg=cor1, fh='green', anchor='nw', font = ("Time New Roman", 12, "bold"))
+l_green.grid(row= 1, column=0)
+s_green=Scale(frame_direita, command= escala, from_=0, to=255, bg=cor1,fh="green", orient=HORIZONTAL)
+s_green.grid(row= 1, column=1)
 
 
 l_blue = Label(frame_direita, text='Blue', width=7, bg=cor1, fh='blue', anchor='nw', font = ("Time New Roman", 12, "bold"))
 l_blue.grid(row= 2, column=0)
-l_blue=Scale(frame_direita, command= escala, from_=0, to=255, bg=cor1,fh="blue", orient=HORIZONTAL)
-l_blue.grid(row= 2, column=1)
+s_blue=Scale(frame_direita, command= escala, from_=0, to=255, bg=cor1,fh="blue", orient=HORIZONTAL)
+s_blue.grid(row= 2, column=1)
 
 
 l_rgb = Label(frame_baixo, text="CÓDIGO HEX : ", bg=cor1, font=("Ivy", 10,"bold"))
